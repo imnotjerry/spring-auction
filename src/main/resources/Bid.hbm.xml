@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="local.model.Bid" table="bid">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		
+		<property name="amount" />
+		
+		<property name="bidDate" type="timestamp" column="bid_date" />
+		
+		<many-to-one name="auction" class="local.model.Auction" not-null="true" cascade="save-update,delete">
+			<column name="auction_id" />
+		</many-to-one>
+		
+		<many-to-one name="user" class="local.model.User" not-null="true" cascade="save-update,delete">
+			<column name="user_id" />
+		</many-to-one>
+		
+	</class>
+</hibernate-mapping>

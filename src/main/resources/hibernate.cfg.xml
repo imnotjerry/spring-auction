@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/spring_auction?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">java</property>
+    <property name="hibernate.connection.password">java</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <!-- JDBC connection pool (use the built-in) -->
+    <property name="connection.pool_size">1</property>
+    <!-- Enable Hibernate's automatic session context management -->
+    <property name="current_session_context_class">thread</property>
+    <!-- Disable the second-level cache  -->
+    <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+    <!-- Echo all executed SQL to stdout -->
+    <!-- Drop and re-create the database schema on startup -->
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <property name="hibernate.format_sql">true</property>
+    <property name="hibernate.show_sql">true</property>
+    <!-- Quote all database identifiers, allow Hibernate to use reserved keywords-->
+    <property name="hibernate.globally_quoted_identifiers">true</property>
+    <!-- Mapping -->
+    <mapping resource="Auction.hbm.xml"/>
+    <mapping resource="User.hbm.xml"/>
+    <mapping resource="Category.hbm.xml"/>
+    <mapping resource="Bid.hbm.xml"/>
+    <mapping resource="Statistics.hbm.xml"/>
+    <mapping resource="Group.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

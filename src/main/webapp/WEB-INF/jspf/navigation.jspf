@@ -1,0 +1,9 @@
+<ul class="navigation">
+	<li><a href="/spring-auction/index.cgi">Home page</a></li>
+	<li><a href="/spring-auction/auction/list.cgi">Auction list</a></li>
+	<li><a href="/spring-auction/auction/create.cgi">Create auction</a></li>
+	<li><a href="/spring-auction/user/signin.cgi">Sign in</a></li>
+	<li><a href="/spring-auction/user/signout.cgi">Sign out</a></li>
+	<li><a href="/spring-auction/user/signup.cgi">Sign up</a></li>
+	<li><a href="/spring-auction/user/list.cgi">User list</a></li>
+</ul>

@@ -1,0 +1,55 @@
+@CHARSET "UTF-8";
+
+.auctionImage {
+	height: 50px;
+}
+
+.auctionLot {
+	width: 350px;
+	margin: 10px;
+	padding: 10px;
+}
+
+.userImage {
+	height: 50px;
+}
+
+table {
+	border: black solid 1px;
+	border-collapse: collapse;
+}
+
+table td {
+	padding: 5px;
+	border: black solid 1px;
+}
+
+/*
+table th {
+    background-color: whitesmoke;
+}
+
+table tr:nth-child(even) {
+    background-color: azure;
+}
+
+table tr:nth-child(odd) {
+    background-color: snow;
+}
+
+table tr:hover {
+    background-color: aquamarine;
+}
+*/
+
+.error {
+	color: #f00;
+}
+
+.errorBlock {
+	color: #000;
+	/*background-color: #f99;*/
+	border: 2px solid #f33;
+	/*padding: 4px;*/
+	/*margin: 8px;*/
+}

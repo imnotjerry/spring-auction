@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="local.model.User" table="user">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<property name="name"/>
+		<property name="description" />
+		<property name="imageURL" />
+		<property name="email" />
+		<property column="birthday" name="birthday" type="timestamp" />
+		<property column="reg_date" name="regDate" type="timestamp" />
+		<property column="last_activity" name="lastActivity" type="timestamp" />
+		
+		<set cascade="save-update" name="auctions" table="auction">
+			<key column="user_id"/>
+			<one-to-many class="local.model.Auction"/>
+		</set>
+		
+		<set name="bids" table="bid" inverse="true">
+			<key column="user_id" />
+			<one-to-many class="local.model.Bid" />
+		</set>
+		
+		<set name="groups" table="user_group">
+			<key column="user_id"/>
+			<many-to-many class="local.model.Group" column="group_id"/>
+		</set>
+		
+		<many-to-one name="statistics" column="statistics_id" 
+			unique="true" not-null="false" cascade="all" />
+	</class>
+</hibernate-mapping>

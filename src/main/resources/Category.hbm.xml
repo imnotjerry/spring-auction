@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="local.model.Category" table="category">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<property name="name"/>
+		<set name="auctions" table="auction_category" inverse="true" >
+			<key column="category_id"/>
+			<many-to-many class="local.model.Auction" column="auction_id"/>
+		</set>
+	</class>
+</hibernate-mapping>
